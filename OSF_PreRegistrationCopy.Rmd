@@ -5,9 +5,39 @@ date: "19 April 2018"
 output: pdf_document
 ---
 
-## R Markdown
+## Title
 
 
 
-## Including Plots
+
+## Authorship
+
+Holly Kirk
+Luis Mata
+Sarah Bekessy
+
+
+## Research QUestions
+
+List each one?
+
+## Hypotheses
+
+
+
+## Existing data
+
+Registration prior to creation of daya: as of the daye of submission this research plan for preregistration, the data have not yet been collected, created, or realized.
+
+## Data collection procedures
+
+Collection of samples
+Duration of data gathering efforts
+Source and location of samples
+
+##Sample size
+
+How many units?
+
+
 
