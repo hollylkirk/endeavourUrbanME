@@ -1,0 +1,13 @@
+---
+title: "OSF_PreRegistrationCopy"
+author: "Holly Kirk"
+date: "19 April 2018"
+output: pdf_document
+---
+
+## R Markdown
+
+
+
+## Including Plots
+
