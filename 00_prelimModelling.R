@@ -76,10 +76,12 @@ lines(Pmove_industrial ~ dists, lty = 2)
 p_move_raster <- function (x, ...) {
   p_move(x[, 1], x[, 2])
 }
-
 # create raster heatmap of movement probability
 prob_raster <- raster::calc(stack(dist, ras),
                      p_move_raster)
+
+
+
 
 
 
