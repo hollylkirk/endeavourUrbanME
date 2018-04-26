@@ -6,7 +6,7 @@ Investigation into movement ecology of urban birds, funded by 2018 Endeavour Res
 
 This repository contains all the data, associated results and reports for my 2018 Endedavour Research Fellowship project. 
 
-The aim of this project is to test whether common assumptions regarding bird movement capabilities are true for species living in urban environments.  The timeline for this project is very short, running from March - July 2018. Models and data collection will be centred around three urban green spaces in the City of Melbourne, Australia.
+The aim of this project is to test whether common assumptions regarding bird movement capabilities are true for species living in urban environments.  The timeline for this project is very short, running from March - July 2018. Models and data collection will be centred around urban green spaces in the City of Melbourne, Australia.
 
 Timeline of project
 
