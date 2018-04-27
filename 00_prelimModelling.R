@@ -82,6 +82,47 @@ prob_raster <- raster::calc(stack(dist, ras),
 
 
 
+# ----------------------------------
+
+# turn into expected number of individuals
+expected_count <- prob * rpois(1, 10)
+
+# put down some random sampling locations
+n_sites <- 300
+expected <- raster::sampleRandom(expected_count, n_sites, cells = TRUE)
+locs <- raster::xyFromCell(expected_count, expected[, "cell"])
+
+# randomly draw observed counts
+counts <- rpois(nrow(expected), expected[, 2])
+
+# plot the landscape
+plot(expected_count, col = colorRampPalette(c("light green", "seagreen"))(100))
+points(locs, cex = log(counts + 1.2), pch = 21, bg = "light blue")
+
+# how to fit the model and estimate the parameters from count data
+
+# extract the data
+df <- data.frame(count = counts)
+df$distance <- extract(dist, locs)
+df$land_cover <- extract(ras, locs)
+df$land_cover <- names(movement_ability)[df$land_cover]
+
+# fit models to estimate movement abilities in different habitat types
+m_housing <- glm(count ~ distance,
+                 family = poisson,
+                 data = df[df$land_cover == "housing", ])
+beta_housing <- coef(m_housing)[2]
+mean_movement_housing <- 1 / -beta_housing
+
+m_industrial <- glm(count ~ distance,
+                    family = poisson,
+                    data = df[df$land_cover == "industrial", ])
+beta_industrial <- coef(m_industrial)[2]
+mean_movement_industrial <- 1 / -beta_industrial
+
+# comapre them to the true values
+unlist(movement_ability[-1])
+c(mean_movement_housing, mean_movement_industrial)
 
 
 
