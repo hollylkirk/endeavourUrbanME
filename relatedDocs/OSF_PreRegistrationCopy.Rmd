@@ -2,7 +2,9 @@
 title: "OSF_PreRegistrationCopy"
 author: "Holly Kirk"
 date: "19 April 2018"
-output: pdf_document
+output:
+  word_document: default
+  pdf_document: default
 ---
 
 ## Title
@@ -13,8 +15,8 @@ Predicting avian movement ability and occurance in urban environments.
 
 ## Authorship
 
-Holly Kirk
-Luis Mata
+Holly Kirk,
+Luis Mata,
 Sarah Bekessy
 
 
