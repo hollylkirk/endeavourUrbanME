@@ -7,6 +7,7 @@ output: pdf_document
 
 ## Title
 
+Predicting avian movement ability and occurance in urban environments.
 
 
 
@@ -17,27 +18,96 @@ Luis Mata
 Sarah Bekessy
 
 
-## Research QUestions
 
-List each one?
+## Research Questions
 
-## Hypotheses
+Urban environments are typically made up of highly fragmented patches of habitat (either remnants or managed green spaces such as parks) surrounded by a matrix of land-uses generally considered to be non-habitat. One of the major assumptions in urban animal ecology is that species are capable of moving between these patches of habitat, across the urban matrix. Species movement ability is used to estimate the distance an animal could move to reach a new habitat patch, but often these movement estimates are based on data recorded in rural areas.
+
+_Given estimates of bird movement capability, what is the predicited distribution of avian species in the City of Melbourne?_
+
+_Does the winter distribution of bird species in Melbourne match the expected distribution?_
+
+_Does land-use type effect the movement capability of bird species in the Melbourne?_
+
+# Hypotheses
+1. Movement capability of birds in urban areas is lower than in rural areas
+2. Movement capability of birds in urban areas is mediated by land-use type
 
 
 
-## Existing data
+## Sampling plan
 
-Registration prior to creation of daya: as of the daye of submission this research plan for preregistration, the data have not yet been collected, created, or realized.
+# Existing data
+Registration prior to creation of data: as of the date of submission of this research plan for preregistration, the data have not yet been collected, created, or realized.
 
-## Data collection procedures
+Estimates for species' movement capability outside urban environments will be drawn from the primary literature and used in the initial predictive models. 
 
-Collection of samples
-Duration of data gathering efforts
-Source and location of samples
+# Data collection procedures
+The key measured variable in this study is the abundance of bird species within the urban matrix. Data on current bird distributions within Melbourne will be collected using a point count survey methodology. Surveys will take place between April and August 2018 and will be undertaken by Holly Kirk. Sampling locations will be randomly selected within a 1.5km radius around each park (where locations fall within privat property the surveyor will take a position as close to the point as possible). Points will be located more than 200m from each other.
 
-##Sample size
+Surveying will start at sunrise, and continue for a maximum of 3 hours, or until bird activity has noticeably reduced. After arriving at each survey location, all visible/audible bird individuals will be identified and recorded for a period of 10 minutes. This will include any birds seen flying overhead, and up to 50m away from the observer's location (visibility permitting). In addition to bird species, environmental variables will also be recorded. These will include weather and site information. Surveys will not take place in the rain or strong winds (>40kmph).
 
-How many units?
+# Sample size
+At least 30 sampling locations outside of Royal Park and 20 outside Westgate Park. More if possible, but there are time constraints.
+
+# Sample size rational
+Not really sure what to do here... I don't have time to do a power analysis...
+
+# Stopping rule
+Again, not sure if this is relevant
+
+# Variables
+Manipulated
+I am not manipulating any variables as this is an observational study. 
+Distance (m) from the park is the main variable which will change, along with environment type/class (park, residential, industrial, road).
+
+Measured
+Bird species and abundance (count data).
+Distance (m) from the park
+Environment type/class (park, residential, industrial, road).
+
+
+
+## Design plan
+
+# Study type
+Observational study
+
+# Blinding
+No blinding is involved with this study
+
+# Study design
+I don't really know what this means...
+
+# Randomization
+Point survey location will be randomised within an area surrounding (and including) the park.
+
+
+
+## Analysis plan
+
+# Statistical models
+Generalised linear models with both fixed and random effects. Number of birds will be the response variable, distance from park the predictor.
+Measure the interaction between habitat type and distance from park?
+
+# Transformations
+The data should not require transformation, as although they are count data we can stipulate a poisson distribution for the model.
+
+# Follow-up analyses
+sub groups, pairwise, interactions??
+
+# Inference criteria
+P-values with a 0.025 cut off criterion. 
+
+# Data exclusion
+No data will be excluded.
+
+# Missing data
+There should not be any missing data.
+
+# Exploratory analysis
+Not really sure...
+
 
 
 
