@@ -9,7 +9,7 @@ output:
 
 ## Title
 
-Predicting avian movement ability and occurence in urban environments.
+Predicting avian movement ability and occurrence in urban environments.
 
 
 
@@ -25,11 +25,13 @@ Sarah Bekessy
 
 Urban environments are typically made up of highly fragmented patches of habitat (either remnants or managed green spaces such as parks) surrounded by a matrix of land-uses generally considered to be non-habitat. One of the major assumptions in urban animal ecology is that species are capable of moving between these patches of habitat, across the urban matrix. Species movement ability is used to estimate the distance an animal could move to reach a new habitat patch, but often these movement estimates are based on data recorded in rural areas.
 
-_Given literature-derived estimates of bird movement capability, what is the predicted distribution of avian species in the City of Melbourne?_
+Using the City of Melbourne as a case study region we ask the following research questions:
 
-_Does the winter distribution of bird species in Melbourne match the expected distribution?_
+_Given literature-derived estimates of bird movement capability, what is the predicted distribution of avian species?_
 
-_Does land-use type effect the movement capability of bird species in the Melbourne?_
+_Does the winter distribution of bird species in the area match the expected distribution?_
+
+_Does land-use type effect the movement capability of bird species?_
 
 
 # Hypotheses
@@ -41,13 +43,13 @@ _Does land-use type effect the movement capability of bird species in the Melbou
 ## Sampling plan
 
 # Existing data
-Registration prior to creation of data: as of the date of submission of this research plan for preregistration, the data have not yet been collected, created, or realized.
+Registration prior to creation of data: as of the date of submission of this research plan for preregistration, the data have not yet been collected, created, or realised.
 
 Estimates for species’ movement capability outside urban environments will be drawn from the primary literature and used in the initial predictive models.
 
 
 # Data collection procedures
-The key measured variable in this study is the abundance of bird species within the urban matrix. Data on current bird distributions within Melbourne will be collected using a point count survey methodology. Surveys will take place between May and August 2018 and will be undertaken by Holly Kirk. Sampling locations will be randomly selected within a 1.5km radius around each park (where locations fall within private property the surveyor will take a position as close to the point as possible). Points will be located more than 200m from each other.
+The key variable to be measured in this study will be the abundance of bird species within the urban matrix. Data on current bird distributions within the study region will be collected using a point count survey methodology. Surveys will take place between May and August 2018 and will be undertaken by Holly Kirk. Sampling locations will be randomly selected within a 1.5km radius around each park (where locations fall within private property the surveyor will take a position as close to the point as possible). Points will be located more than 200m from each other.
 
 Surveying will start at sunrise, and continue for a maximum of 3 hours, or until bird activity has noticeably reduced. After arriving at each survey location, all visible/audible bird individuals will be identified and recorded for a period of 10 minutes. This will include any birds seen flying overhead, and up to 50m away from the observer’s location (visibility permitting). In addition to bird species, environmental variables will also be recorded. These will include weather and site information. Surveys will not take place in the rain or strong winds (>40kmph).
 
@@ -66,12 +68,17 @@ Data collection will be terminated at the end of July 2018, or after 100 surveys
 
 # Variables
 Manipulated
+
+
 I am not manipulating any variables as this is an observational study. 
 
-Measured
-Bird species and abundance (count data) will be the outcome measure. Distance (m) from the park through each environment type/class (park, residential, industrial, road) will be used as predictors to test the hypotheses. Weather and site conditions will be assessed as potential confounding factors and included as predictors if necessary to meet model assumptions.
 
-Additionally, estimates of movement ability for each species will be collated from the literature. These literature-derived estimates are likely to have different units (mean dispersal distance, maximum observed dispersal distance etc.) which, where possible, will be standardised to represent the mean dispersal distance by assuming an exponential movement distribution, and using existing formulae for e.g. the cumulative distribution function and its inverse.
+Measured
+
+
+Bird species and abundance (count data) will be the outcome variable. Distance (m) from the park through each environment type/class (park, residential, industrial, road) will be used as predictors to test the hypotheses. Weather and site conditions will be assessed as potential confounding factors and included as predictors if necessary to meet model assumptions.
+
+Additionally, estimates of movement ability for each species will be collated from the literature. These literature-derived estimates are likely to have different units (mean dispersal distance, maximum observed dispersal distance etc.) which, where possible, will be standardised to represent the mean dispersal distance by assuming an exponential movement distribution, and using existing formulae to estimate the parameter from the data.
 
 
 
@@ -119,7 +126,7 @@ P-values with a 0.05 cut off criterion.
 
 
 # Data exclusion
-Models will preferentially fit for separate species, but where there are fewer than 10 total observations of a species, the observations for that species will be combined with counts for taxonomically and behaviourally similar species where possible, to form a species group. Where this is not possible, count data for those species will be excluded. Similarly, models will only be fit to species groups for which there are at least 10 observations.
+Models will be preferentially fitted for separate species, but where there are fewer than 10 total observations of a species, the observations for that species will be combined with counts for taxonomically and behaviourally similar species where possible, to form a species group. Where this is not possible, count data for those species will be excluded. Similarly, models will only be fit to species groups for which there are at least 10 observations.
 
 
 # Missing data
