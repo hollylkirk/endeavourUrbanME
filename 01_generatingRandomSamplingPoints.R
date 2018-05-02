@@ -71,9 +71,19 @@ RP_df <- SpatialPointsDataFrame(RP_points, df)
 RP_sample <- spTransform(RP_df, CRS("+proj=longlat +datum=WGS84"))
 RP_sample <- data.frame(RP_sample@coords[,1], RP_sample@coords[,2])
 
+
+# identify clusters of data points for randomising survey order
+size <- 6
+cluster_id <- kmeans(RP_sample, centers = nrow(RP_sample) %/% size)$cluster
+table(cluster_id)
+# add this to the dataframe
+RP_sample <- cbind(cluster_id, RP_sample)
+# create a sample ID column
+RP_sample$ID <- seq.int(nrow(RP_sample))
+
 # export to GPX/CSV/KML file
-cnames <- c("long", "lat")
-write.csv(RP_sample, "output/RP_SamplePoints.csv", col.names = cnames, row.names = FALSE)
+# cnames <- c("long", "lat")
+write.csv(RP_sample, "output/RP_SamplePoints.csv", row.names = FALSE)
 
 
 
@@ -104,9 +114,18 @@ WGP_df <- SpatialPointsDataFrame(WGP_points, df)
 WGP_sample <- spTransform(WGP_df, CRS("+proj=longlat +datum=WGS84"))
 WGP_sample <- data.frame(WGP_sample@coords[,1], WGP_sample@coords[,2])
 
+# identify clusters of data points for randomising survey order
+size <- 6
+cluster_id <- kmeans(WGP_sample, centers = nrow(WGP_sample) %/% size)$cluster
+table(cluster_id)
+# add this to the dataframe
+WGP_sample <- cbind(cluster_id, WGP_sample)
+# create a sample ID column
+WGP_sample$ID <- seq.int(nrow(WGP_sample))
+
 # export to GPX/CSV/KML file
-cnames <- c("long", "lat")
-write.csv(WGP_sample, "output/WGP_SamplePoints.csv", col.names = cnames, row.names = FALSE)
+# cnames <- c("long", "lat")
+write.csv(WGP_sample, "output/WGP_SamplePoints.csv", row.names = FALSE)
 
 
 
