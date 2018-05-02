@@ -76,7 +76,7 @@ I am not manipulating any variables as this is an observational study.
 Measured
 
 
-Bird species and abundance (count data) will be the outcome variable. Distance (m) from the park through each environment type/class (park, residential, industrial, road) will be used as predictors to test the hypotheses. Weather and site conditions will be assessed as potential confounding factors and included as predictors if necessary to meet model assumptions.
+Bird species and abundance (count data) will be the outcome variable. Distance (m) from the park through each environment type/class (urban matrix, tree cover and road) will be used as predictors to test the hypotheses. Weather and site conditions will be assessed as potential confounding factors and included as predictors if necessary to meet model assumptions.
 
 Additionally, estimates of movement ability for each species will be collated from the literature. These literature-derived estimates are likely to have different units (mean dispersal distance, maximum observed dispersal distance etc.) which, where possible, will be standardised to represent the mean dispersal distance by assuming an exponential movement distribution, and using existing formulae to estimate the parameter from the data.
 
