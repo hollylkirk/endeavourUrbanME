@@ -23,7 +23,7 @@ Sarah Bekessy
 
 ## Research Questions
 
-Urban environments are typically made up of highly fragmented patches of habitat (either remnants or managed green spaces such as parks) surrounded by a matrix of land-uses generally considered to be non-habitat. One of the major assumptions in urban animal ecology is that species are capable of moving between these patches of habitat, across the urban matrix. Species movement ability is used to estimate the distance an animal could move to reach a new habitat patch, but often these movement estimates are based on data recorded in rural areas.
+Urban environments are typically made up of highly fragmented patches of habitat (either remnants or managed green spaces such as parks) surrounded by a matrix of land-uses generally considered to be non-habitat. One of the major assumptions in urban animal ecology is that species are capable of moving between these patches of habitat, across the urban matrix. Species movement ability (mean flight distance) is used to estimate the distance an animal could move to reach a new habitat patch, but often these movement estimates are based on data recorded in rural areas.
 
 Using the City of Melbourne as a case study region we ask the following research questions:
 
@@ -35,8 +35,8 @@ _Does land-use type effect the movement capability of bird species?_
 
 
 # Hypotheses
-1. Movement capability of birds in urban areas is lower than in rural areas.
-2. Movement capability of birds in urban areas is mediated by land-use type.
+1. Movement capability (mean flight distance) of birds in urban areas is lower than in rural areas.
+2. Movement capability (mean flight distance) of birds in urban areas is mediated by land-use type.
 
 
 
@@ -45,13 +45,13 @@ _Does land-use type effect the movement capability of bird species?_
 # Existing data
 Registration prior to creation of data: as of the date of submission of this research plan for preregistration, the data have not yet been collected, created, or realised.
 
-Estimates for species’ movement capability outside urban environments will be drawn from the primary literature and used in the initial predictive models.
+Estimates for species’ mean flight distance outside urban environments will be drawn from the primary literature and used in the initial predictive models.
 
 
 # Data collection procedures
 The key variable to be measured in this study will be the abundance of bird species within the urban matrix. Data on current bird distributions within the study region will be collected using a point count survey methodology. Surveys will take place between May and August 2018 and will be undertaken by Holly Kirk. Sampling locations will be randomly selected within a 1.5km radius around each park (where locations fall within private property the surveyor will take a position as close to the point as possible). Points will be located more than 200m from each other.
 
-Surveying will start at sunrise, and continue for a maximum of 3 hours, or until bird activity has noticeably reduced. After arriving at each survey location, all visible/audible bird individuals will be identified and recorded for a period of 10 minutes. This will include any birds seen flying overhead, and up to 50m away from the observer’s location (visibility permitting). In addition to bird species, environmental variables will also be recorded. These will include weather and site information. Surveys will not take place in the rain or strong winds (>40kmph).
+Surveying will start 30 minutes before sunrise, and continue for a maximum of 3 hours, or until bird activity has noticeably reduced. After arriving at each survey location, all visible/audible bird individuals will be identified and recorded for a period of 10 minutes. This will include any birds seen flying overhead, and up to 50m away from the observer’s location (visibility permitting). In addition to bird species, environmental variables will also be recorded. These will include weather and site information. Surveys will not take place in the rain or strong winds (>30kmph).
 
 
 # Sample size
@@ -76,9 +76,9 @@ I am not manipulating any variables as this is an observational study.
 Measured
 
 
-Bird species and abundance (count data) will be the outcome variable. Distance (m) from the park through each environment type/class (urban matrix, tree cover and road) will be used as predictors to test the hypotheses. Weather and site conditions will be assessed as potential confounding factors and included as predictors if necessary to meet model assumptions.
+Bird species and abundance (count data) will be the outcome variable. Distance (m) from the edge of the park through each environment type/class (urban matrix, tree cover and road) will be used as predictors to test the hypotheses. Wind and site conditions will be assessed as potential confounding factors (see exploratory analysis section) and included as predictors if necessary to meet model assumptions.
 
-Additionally, estimates of movement ability for each species will be collated from the literature. These literature-derived estimates are likely to have different units (mean dispersal distance, maximum observed dispersal distance etc.) which, where possible, will be standardised to represent the mean dispersal distance by assuming an exponential movement distribution, and using existing formulae to estimate the parameter from the data.
+Additionally, estimates of mean movement distances (m) for each species will be collated from the literature. These literature-derived estimates are likely to have different units that mean daily flight distance (e.g. mean hourly flight distance, maximum daily flight distance, etc.). Where possible these estimates will be converted to represent the mean daily flight distance by assuming an exponential movement distribution (the model used for analysis), and using existing formulae for this distribution to estimate the parameter from the published data.
 
 
 
@@ -106,9 +106,21 @@ Point survey locations will be selected uniformly at random within an area surro
 # Statistical models
 The number of individuals of each bird species or species group at each location will be used as the response variable in separate generalised linear models (GLMs) for each species with Poisson sampling distribution and log link.
 
+All models will be run for all species/species groups.
+
 To test hypothesis 1, the total distance of each survey point from the nearest edge of the park will be used as a predictor. The estimated slope coefficient will be interpreted as the decay parameter of an exponential movement distribution and compared with the parameter implied by the literature-derived estimate of movement ability. Hypothesis 1 will be tested separately for each species with a one-tailed one-sample t-test of whether the estimated urban dispersal parameter is lower than the existing dispersal parameter.
 
+Compare: 
+GLM1: Number of birds (predicted) ~ distance from edge of park
+GLM2: Number of birds (measured) ~ distance from edge of park
+
+
 To test hypothesis 2, the straight-line distance from each survey point to the nearest edge of the park will be split into the distance traversing each habitat type (all habitat distances summing to the total distance). The distances for each habitat type will be used as multiple predictors in each species model, in place of the total distance. For each species, hypothesis 2 will be tested with a one-tailed likelihood ratio test between this habitat-dependent model and the habitat-independent model described above, testing whether the habitat-dependent model has better fit.
+
+Compare:
+GLM2: Number of birds (measured) ~ distance from edge of park
+GLM3: Number of birds (measured) ~ distance (from edge of park) across urban matrix + distance across tree cover + distance across road 
+
 
 The validity of the assumptions made by these GLMs will be assessed by visualising model residuals. Where necessary, confounding factors (such as local site or weather conditions) will be accounted for by including them as additional predictors in the model. These predictors will be retained if they resolve any violations of model assumptions, but the corresponding parameter estimates will not be used to make inferences about hypotheses.
 
@@ -134,7 +146,7 @@ There should not be any missing data.
 
 
 # Exploratory analysis
-No exploratory analyses will be performed.
+Model residuals will be extracted from the models corresponding to the null and alternative hypotheses. These residuals will be plotted against the corresponding values of each of these potential confounding variables to assess whether the residuals have heterogenous mean and variance with respect to the potential confounding variable. Where there is visual evidence of a potential relationship, the models will be refitted with the potential confounding variable included as a predictor.
 
 
 
